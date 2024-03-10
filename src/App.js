@@ -1,7 +1,6 @@
-// src/App.js
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import './App.scss';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "./App.scss";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -9,10 +8,12 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+        const response = await axios.get(
+          "https://jsonplaceholder.typicode.com/users"
+        );
         setUsers(response.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -33,5 +34,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
